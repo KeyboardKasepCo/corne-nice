@@ -40,7 +40,7 @@
                        <&macro_tap &kp N5>,
                        <&macro_release &kp LSHFT>,
                        <&macro_release &kp LGUI>;
-          }
+          };
         };
 
         keymap {
