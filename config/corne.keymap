@@ -81,8 +81,8 @@
 //                    | GUI | CONF| SPC |   | ENT |     | ALT |
                         bindings = <
    &kp ESC      &kp F1       &kp F2    &kp F3   &kp F4    &kp CAPS      &kp CAPS     &kp HOME   &kp UP    &kp END    &kp PG_UP &kp BSPC 
-   &kp LSHFT    &kp F5       &kp F6    &kp F7   &kp F8    &kp MACR0     &kp C_VOL_UP &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN &kp DEL
-   &kp MACR1    &kp F9       &kp F10   &kp F11  &kp F12   &kp MACR3     &kp C_VOL_DN &kp C_PREV &kp C_PP  &kp C_NEXT &trans    &kp MACR2
+   &kp LSHFT    &kp F5       &kp F6    &kp F7   &kp F8    &MACR0        &kp C_VOL_UP &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN &kp DEL
+   &MACR1       &kp F9       &kp F10   &kp F11  &kp F12   &MACR3        &kp C_VOL_DN &kp C_PREV &kp C_PP  &kp C_NEXT &trans    &MACR2
                                        &kp LGUI &mo CONFI &kp SPACE     &kp RET      &trans     &kp RALT
                         >;
                 };
