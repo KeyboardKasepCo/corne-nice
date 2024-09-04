@@ -17,19 +17,29 @@
         macros {
           MACR0: MACR0 {
             compatible = "zmk,behavior-macro";
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp UP>;
+            bindings = <&macro_press &kp LCTRL>, 
+                       <&macro_tap &kp UP>, 
+                       <&macro_release &kp LCTRL>;
           };
           MACR1: MACR1 {
             compatible = "zmk,behavior-macro";
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp LEFT>;
+            bindings = <&macro_press &kp LCTRL>, 
+                       <&macro_tap &kp LEFT>,
+                       <&macro_release &kp LCTRL>;
           };
           MACR2: MACR2 {
             compatible = "zmk,behavior-macro";
-            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp RIGHT>;
+            bindings = <&macro_press &kp LCTRL>, 
+                       <&macro_tap &kp RIGHT>,
+                       <&macro_release &kp LCTRL>;
           };
           MACR3: MACR3 {
             compatible = "zmk,behavior-macro";
-            bindings = <&macro_press &kp LGUI &kp LSHFT>, <&macro_tap &kp N5>;
+            bindings = <&macro_press &kp LGUI>, 
+                       <&macro_press &kp LSHFT>,
+                       <&macro_tap &kp N5>,
+                       <&macro_release &kp LSHFT>,
+                       <&macro_release &kp LGUI>;
           }
         };
 
