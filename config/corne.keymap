@@ -14,6 +14,25 @@
 #define CONFI 3
 
 / {
+        macros {
+          MACR0: MACR0 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp UP>;
+          };
+          MACR1: MACR1 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp LEFT>;
+          };
+          MACR2: MACR2 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&macro_press &kp LCTRL>, <&macro_tap &kp RIGHT>;
+          };
+          MACR3: MACR3 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&macro_press &kp LGUI &kp LSHFT>, <&macro_tap &kp N5>;
+          }
+        };
+
         keymap {
                 compatible = "zmk,keymap";
 
@@ -25,9 +44,9 @@
 //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
                         bindings = <
    &kp ESC   &kp Q &kp W &kp E &kp R &kp T       &kp Y &kp U  &kp I     &kp O   &kp P    &kp BSPC
-   &kp LCTRL &kp A &kp S &kp D &kp F &kp G       &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
-   &kp LSHFT &kp Z &kp X &kp C &kp V &kp B       &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp TAB
-                  &kp LGUI &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp RALT
+   &kp LSHFT &kp A &kp S &kp D &kp F &kp G       &kp H &kp J  &kp K     &kp L   &kp SEMI &kp SQT
+   &kp LGUI  &kp Z &kp X &kp C &kp V &kp B       &kp N &kp M  &kp COMMA &kp DOT &kp FSLH &kp RALT
+                 &kp LCTRL &mo LOWER &kp SPACE   &kp RET &mo RAISE &kp TAB
                         >;
                 };
                 lower_layer {
@@ -37,9 +56,9 @@
 // | SHFT |     |     |     |     |     |   |     |INS  |PSCRN|SLCK |PAUSE_BREAK| PGDN |
 //                    | GUI |     | SPC |   | ENT | CONF| ALT |
                         bindings = <
-   &kp TAB    &kp N1       &kp N2       &kp N3       &kp N4       &kp N5         &kp N6    &kp N7    &kp N8    &kp N9    &kp N0          &kp BSPC
-   &kp CAPS   &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT      &kp CARET &kp AMPS  &kp ASTRK &kp LPAR  &kp RPAR        &trans
-   &kp LSHFT  &trans       &trans       &trans       &trans       &trans         &trans    &kp INS   &kp PSCRN &kp SLCK  &kp PAUSE_BREAK &kp PG_DN
+   &kp DEL    &kp LS(N1)   &kp LS(N2)   &kp LS(N3)   &kp LS(N4)   &kp LS(N5)     &kp N7    &kp N8    &kp N9    &kp N0    &kp SLASH       &kp BSPC
+   &kp LSHFT  &kp LS(N6)   &kp LS(N7)   &kp LS(N8)   &kp LS(N9)   &kp LS(N0)     &kp N4    &kp N5    &kp N6    &kp EQUAL &kp KP_COMMA    &kp KP_EQUAL
+   &kp ENTER  &kp GRAVE    &kp BSLH     &kp LBKT     &kp RBKT     &kp LS(MINUS)  &kp N1    &kp N2    &kp N3    &kp MINUS &kp PAUSE_BREAK &kp RGUI
                                         &kp LGUI     &trans       &kp SPACE      &kp RET   &mo CONFI &kp RALT
                         >;
                 };
@@ -51,10 +70,10 @@
 // |  _  |  +  |  {  |  }  | "|" |  ~   |   |     | LEFT|DOWN |RIGHT|PGDN |     |
 //                    | GUI | CONF| SPC |   | ENT |     | ALT |
                         bindings = <
-   &kp F1       &kp F2       &kp F3    &kp F4   &kp F5    &kp F6      &kp F7    &kp F8    &kp F9    &kp F10   &kp F11   &kp F12 
-   &kp KP_MINUS &kp KP_EQUAL &kp LBKT  &kp RBKT &kp BSLH  &kp GRAVE   &trans    &kp HOME  &kp UP    &kp END   &kp PG_UP &trans
-   &kp UNDER    &kp PLUS     &kp LBRC  &kp RBRC &kp PIPE &kp TILDE    &trans    &kp LEFT  &kp DOWN  &kp RIGHT &kp PG_DN &trans
-                                       &kp LGUI &mo CONFI &kp SPACE   &kp RET   &trans    &kp RALT
+   &kp ESC      &kp F1       &kp F2    &kp F3   &kp F4    &kp CAPS      &kp CAPS     &kp HOME   &kp UP    &kp END    &kp PG_UP &kp BSPC 
+   &kp LSHFT    &kp F5       &kp F6    &kp F7   &kp F8    &kp MACR0     &kp C_VOL_UP &kp LEFT   &kp DOWN  &kp RIGHT  &kp PG_DN &kp DEL
+   &kp MACR1    &kp F9       &kp F10   &kp F11  &kp F12   &kp MACR3     &kp C_VOL_DN &kp C_PREV &kp C_PP  &kp C_NEXT &trans    &kp MACR2
+                                       &kp LGUI &mo CONFI &kp SPACE     &kp RET      &trans     &kp RALT
                         >;
                 };
 
